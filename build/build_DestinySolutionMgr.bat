@@ -1,0 +1,1 @@
+call msbuild_cmd.bat ..\sln\DestinySolutionMgr.sln Release-OneXS

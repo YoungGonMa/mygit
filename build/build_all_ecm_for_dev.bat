@@ -1,0 +1,2 @@
+call build_all_ecm_release.bat
+call build_all_ecm_debug.bat
