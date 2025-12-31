@@ -1,0 +1,16 @@
+test_id: log_perf
+
+menu_txt: benchmark log performance
+
+config:
+  repeat_count: 3
+  log_methods:
+    - realtime
+    - thread
+    - off
+  job:
+    loc_to_write1: 100
+    job1_time(s): 1
+    loc_to_write2: 200
+    job2_time(s): 2
+    loc_to_write3: 300

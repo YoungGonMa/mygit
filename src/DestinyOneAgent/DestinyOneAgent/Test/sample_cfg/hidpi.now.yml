@@ -1,0 +1,39 @@
+test_id: hidpi
+
+menu_txt: test hidpi
+
+config:
+  job:
+    DOCtrlDlgWarning: false
+    DOCtrlDlgSelOpenMode: false
+    DOCtrlDlgFileEdit: false
+    DOCtrlDlgUploadSingle: false
+    DOCtrlDlgAsk: false
+    DOCtrlDlgFileError: false
+    DOCtrlDlgMessage: true
+    DOCtrlDlgSelSaveMode: false
+    DOCtrlDlgUploadMulti: false
+    CChangePWDlg: false
+    CChangePWDlg_NoCancelButton: false
+    CDocListDlg: false
+    CIDCheckDlg: false
+    CExternalExportDlg: false
+    CMessageDlg: false
+    COverwriteDlg: false
+    CPCTakeOutDlg: false
+    ReFileNameDlg: false
+    CAvoidDuplicationDlg: false
+    MultiUploadOptDlg: false
+    CDlgFileTransfer_Up: false
+    CDlgFileTransfer_Down: false
+    CDlgFileTransfer_Execute: false
+# MB_OK 0
+# MB_OKCANCEL 1
+# MB_YESNO 4
+# MB_RETRYCANCEL 5
+# MB_RETRY 13
+# MB_RETRYFORCEKILL 14
+# MB_RETRYFORCEKILLCANCEL 15
+# MB_MOVETOSECURITYDD 16
+# MB_MOVETOSERVER 17
+  mb_type: 14

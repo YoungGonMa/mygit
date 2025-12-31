@@ -1,0 +1,6 @@
+test_id: tasklist
+
+menu_txt: test tasklist output
+
+config:
+  process_name: iexplore.exe

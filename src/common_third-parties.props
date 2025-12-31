@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '10.0'">
+    <IncludePath>$(R3__BOOST_ROOT);$(R3__THIRD_PARTY_ROOT)\include;$(R3__OPEN_SSL_ROOT)\include;$(R3__POCO_ROOT)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(R3__BOOST_ROOT)\lib$(PlatformArchitecture)-msvc-$(VisualStudioVersion);$(R3__THIRD_PARTY_ROOT)\lib;$(R3__OPEN_SSL_ROOT)\lib;$(R3__POCO_ROOT)\lib$(PlatformArchitecture)-msvc-10.0;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '15.0' Or '$(VisualStudioVersion)' == '16.0'">
+    <IncludePath>$(IncludePath);$(R7__BOOST_ROOT);$(R7__THIRD_PARTY_ROOT)\include;$(R7__THIRD_PARTY_ROOT)\include\cpprestsdk;$(R7__THIRD_PARTY_ROOT)\include\msgpack-c;$(R6__POCO_ROOT)\include</IncludePath>
+    <LibraryPath>$(LibraryPath);$(R7__BOOST_ROOT)\lib$(PlatformArchitecture)-msvc-14.1;$(R7__THIRD_PARTY_ROOT)\lib;$(R6__POCO_ROOT)\lib$(PlatformArchitecture)-msvc-14.1;</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(VisualStudioVersion)' == '10.0'">
+    <ClCompile>
+      <PreprocessorDefinitions>POCO_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+    <ItemDefinitionGroup Condition="'$(VisualStudioVersion)' == '15.0' Or '$(VisualStudioVersion)' == '16.0'">
+    <ClCompile>
+      <PreprocessorDefinitions>_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_TURN_OFF_PLATFORM_STRING;POCO_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
