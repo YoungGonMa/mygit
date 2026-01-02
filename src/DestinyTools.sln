@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeployMaker", "DestinyTools\DeployMaker\DeployMaker.vcxproj", "{17986315-AA2A-448A-8E87-093B905F9EDA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{88A90AF0-10F8-4EAA-970A-CE354AA255F8} = {88A90AF0-10F8-4EAA-970A-CE354AA255F8}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibDOCore", "..\common\src\LibDOCore\LibDOCore.vcxproj", "{50987654-0001-451A-A626-110384757578}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibDOBase", "..\common\src\LibDOBase\LibDOBase.vcxproj", "{85BC82EF-0001-451A-A626-F9811D34BA48}"
+	ProjectSection(ProjectDependencies) = postProject
+		{50987654-0001-451A-A626-110384757578} = {50987654-0001-451A-A626-110384757578}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibDOCtrl", "..\common\src\LibDOCtrl\LibDOCtrl.vcxproj", "{88A90AF0-10F8-4EAA-970A-CE354AA255F8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{85BC82EF-0001-451A-A626-F9811D34BA48} = {85BC82EF-0001-451A-A626-F9811D34BA48}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DestinyConfigMaker", "DestinyTools\DestinyConfigMaker\DestinyConfigMaker.vcxproj", "{8D53C957-714E-4E89-A3AA-FBEEDA3CBE22}"
+	ProjectSection(ProjectDependencies) = postProject
+		{88A90AF0-10F8-4EAA-970A-CE354AA255F8} = {88A90AF0-10F8-4EAA-970A-CE354AA255F8}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug static|Win32 = Debug static|Win32
+		Release static|Win32 = Release static|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17986315-AA2A-448A-8E87-093B905F9EDA}.Debug static|Win32.ActiveCfg = Debug|Win32
+		{17986315-AA2A-448A-8E87-093B905F9EDA}.Debug static|Win32.Build.0 = Debug|Win32
+		{17986315-AA2A-448A-8E87-093B905F9EDA}.Release static|Win32.ActiveCfg = Release|Win32
+		{17986315-AA2A-448A-8E87-093B905F9EDA}.Release static|Win32.Build.0 = Release|Win32
+		{50987654-0001-451A-A626-110384757578}.Debug static|Win32.ActiveCfg = Debug static|Win32
+		{50987654-0001-451A-A626-110384757578}.Debug static|Win32.Build.0 = Debug static|Win32
+		{50987654-0001-451A-A626-110384757578}.Release static|Win32.ActiveCfg = Release static|Win32
+		{50987654-0001-451A-A626-110384757578}.Release static|Win32.Build.0 = Release static|Win32
+		{85BC82EF-0001-451A-A626-F9811D34BA48}.Debug static|Win32.ActiveCfg = Debug static|Win32
+		{85BC82EF-0001-451A-A626-F9811D34BA48}.Debug static|Win32.Build.0 = Debug static|Win32
+		{85BC82EF-0001-451A-A626-F9811D34BA48}.Release static|Win32.ActiveCfg = Release static|Win32
+		{85BC82EF-0001-451A-A626-F9811D34BA48}.Release static|Win32.Build.0 = Release static|Win32
+		{88A90AF0-10F8-4EAA-970A-CE354AA255F8}.Debug static|Win32.ActiveCfg = Debug static|Win32
+		{88A90AF0-10F8-4EAA-970A-CE354AA255F8}.Debug static|Win32.Build.0 = Debug static|Win32
+		{88A90AF0-10F8-4EAA-970A-CE354AA255F8}.Release static|Win32.ActiveCfg = Release static|Win32
+		{88A90AF0-10F8-4EAA-970A-CE354AA255F8}.Release static|Win32.Build.0 = Release static|Win32
+		{8D53C957-714E-4E89-A3AA-FBEEDA3CBE22}.Debug static|Win32.ActiveCfg = Debug|Win32
+		{8D53C957-714E-4E89-A3AA-FBEEDA3CBE22}.Debug static|Win32.Build.0 = Debug|Win32
+		{8D53C957-714E-4E89-A3AA-FBEEDA3CBE22}.Release static|Win32.ActiveCfg = Release|Win32
+		{8D53C957-714E-4E89-A3AA-FBEEDA3CBE22}.Release static|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

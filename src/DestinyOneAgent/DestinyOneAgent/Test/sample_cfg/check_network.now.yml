@@ -1,0 +1,9 @@
+test_id: check_network
+
+menu_txt: test check network/session
+
+config:
+  job:
+    session: true
+    network: true
+    sessionContinuos: false
