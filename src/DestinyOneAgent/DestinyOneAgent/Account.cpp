@@ -10,7 +10,7 @@
 #include "TrayIcon.h"
 #include "LibDOCore/DOUtilReg.h"
 #include "ShareUtil/NotificationCenterUtil.h"
-
+// test
 using namespace ghost::define;
 
 CString BaseAccountInfo::PrintInfo() const
