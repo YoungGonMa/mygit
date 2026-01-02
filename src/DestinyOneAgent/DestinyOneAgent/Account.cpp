@@ -11,6 +11,7 @@
 #include "LibDOCore/DOUtilReg.h"
 #include "ShareUtil/NotificationCenterUtil.h"
 // test
+asdf
 using namespace ghost::define;
 
 CString BaseAccountInfo::PrintInfo() const
