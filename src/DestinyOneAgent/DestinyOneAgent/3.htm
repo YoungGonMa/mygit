@@ -1,0 +1,156 @@
+﻿<%@ page language="html" contentType="text/html;charset=euc-kr" %>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>간단한 XMLHttpRequest 예제</title>
+<script language="JavaScript">
+<!--
+var xmlHttp;
+
+function createXMLHttpRequest() {
+    if(window.ActiveXObject) {
+        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    } else if(window.XMLHttpRequest) {
+        xmlHttp = new XMLHttpRequest();
+    }
+}
+function getXmlHttpRequest(){
+		var xmlhttp = false;
+
+		// Mozilla/Safari
+		if (window.xmlhttpuest) {
+				xmlhttp = new xmlhttpuest();
+		}
+		// IE
+		else if (window.ActiveXObject) {
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		return xmlhttp;
+	}
+	
+
+function startRequest() {
+    createXMLHttpRequest();
+    xmlHttp.onreadystatechange = handleStateChange;
+    xmlHttp.open("GET", "simpleResponse.xml", true);
+    xmlHttp.send(null);
+}
+
+function startRequest2() {
+    createXMLHttpRequest();
+    xmlHttp.onreadystatechange = handleStateChange;
+    xmlHttp.open("GET", "1111", true);
+    xmlHttp.send(null);
+}
+
+function handleStateChange() {
+    if(xmlHttp.readyState == 4) {
+        if(xmlHttp.status == 200) {
+            alert("서버로부터의 응답 : " + xmlHttp.responseText);
+        }
+    }
+}
+//-->
+</script>
+</head>
+
+<body>
+<h3>간단한 XMLHttpRequest 예제</h3>
+<form action="#">
+    <input type="button" value="간단한 비동기 요청 시작" onclick="startRequest();"/>
+ <input type="button" value="간단한 비동기 요청 시작2" onclick="startRequest2();"/>
+</form>
+<br/>
+<a href="javascript:history.back();">뒤로</a>
+
+<table width=100% border="0" cellspacing="0" cellpadding="10" valign=top> 
+	<tr>
+		<td width=150>
+			<table border="0" cellspacing=0 cellpadding=0 width="150" height="100" style="border:solid 1px black;" align=center>
+				<tr valign=top>
+					<td bgcolor="#dddddd">
+						<DIV id="access_list" class="dbtool_scroll">
+						<table border="0" cellspacing=1 cellpadding=0 width="100%">
+							<tr>
+								<td>
+								현재접속자 : Loading
+								</td>
+							</tr>
+						</table>
+						</DIV>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td>
+			<table border="0" cellspacing=0 cellpadding=2>
+			<%if(session.getAttribute("ex_user_id")!=null){%>
+			<form name="logoutform" method="post" action="logout_process.jsp">
+				<tr>
+					<td>
+					<%=session.getAttribute("ex_user_name")%>(<%=session.getAttribute("ex_user_id")%>)님이 로그인 하였습니다.
+					</td>
+				</tr>
+				<tr>
+					<td align=center>
+					<input type=submit value="로그아웃">
+					</td>
+				</tr>
+			</form>
+			<%}else{%>
+			<form name="loginform" method="post" action="login_process.jsp" onsubmit="return check_login(this)">
+				<tr>
+					<td>
+					아이디: <input type=text name="user_id" size="12" value="test">
+					이름: <input type=text name="user_name" size="12" value="테스트">
+					</td>
+				</tr>
+				<tr>
+					<td align=center>
+					<input type=submit value="로그인">
+					</td>
+				</tr>
+			</form>
+			<%}%>
+			</table>
+		</td>
+		<td>
+			&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td colspan=3>
+			* 브라우져를 새로 여러개 띄워 테스트하면 됩니다.<br>
+		</td>
+	</tr>
+</table>
+
+<script language="javascript">    
+	function access_list(){
+		var xmlhttp = getXmlHttpRequest();
+		var url = "http://localhost:8080/1111";
+		
+		if(url){
+			xmlhttp.open("GET", url, true);
+
+			xmlhttp.onreadystatechange = function() {
+				if(xmlhttp.readyState == 4) {
+					if(xmlhttp.status == 200) {
+						var respTxt = xmlhttp.responseText;
+						document.getElementById("access_list").innerHTML = respTxt;
+					} else {
+						//alert("Error loading "+url+", "+xmlhttp.status+"("+xmlhttp.statusText+")");
+					}
+				}
+			}
+			xmlhttp.send(null);
+		}
+		setTimeout("access_list()", 3600000);//3초 마다 서버와 통신함
+		return false;
+	}
+	access_list(); 
+</script>
+
+</body>
+</html>
